@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice List</title>
+    <style>
+        /* Reset some basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .invoice-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .invoice-item:last-child {
+            border-bottom: none;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .email {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .invoice-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .name {
+                font-size: 18px;
+            }
+
+            .email {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice List</h1>
+        {% for item in invoice %}
+        <div class="invoice-item">
+            <div class="name">{{ item.name }}</div>
+            <div class="email">{{ item.email }}</div>
+            <div class="email">{{ item.phonenumber }}</div>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
